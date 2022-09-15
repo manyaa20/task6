@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+p {
+  text-align: center;
+  font-size: 60px;
+  margin-top: 0px;
+}
+:root {  
+  --smaller: .75;  
+ }  
+ * {  
+  box-sizing: border-box;  
+  margin: 105px;  
+  padding: 100px;  
+ }  
+ html, body {  
+  height: 100%;  
+  margin: 0px;  
+ }  
+ body {  
+  align-items: center;  
+  background-color: #ffd54f;  
+  display: flex;  
+  font-family:Arial, Helvetica, sans-serif;  
+ }  
+ .container {  
+  color: #333;  
+  margin: 0 auto;  
+  text-align: center;  
+ }  
+ h1 {  
+  font-weight: normal;  
+  letter-spacing: .125rem;  
+  text-transform: uppercase;  
+ }  
+ li {  
+  display: inline-block;  
+  font-size: 1.5em;  
+  list-style-type: none;  
+  padding: 1em;  
+  text-transform: uppercase;  
+ }  
+ li span {  
+  display: block;  
+  font-size: 4.5rem;;  
+ }
+  h1 {  
+   font-size: calc(1.5rem * var(--smaller));  
+  }  
+  li {  
+   font-size: calc(1.125rem * var(--smaller));  
+  }  
+  li span {  
+   font-size: calc(3.375rem * var(--smaller));  
+  }  
+ 
+</style>
+</head>
+<body>
+
+<p id="demo"></p>
+
+<script>
+var countDownDate = new Date("september 30, 2022 23:59:59").getTime();
+
+var x = setInterval(function() {
+
+  var now = new Date().getTime();
+    
+  var distance = countDownDate - now;
+    
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+    
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+
+</body>
+</html>
